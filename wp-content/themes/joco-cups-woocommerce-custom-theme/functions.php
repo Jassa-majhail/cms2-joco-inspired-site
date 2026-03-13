@@ -46,3 +46,36 @@ add_action( 'wp_enqueue_scripts', function () {
 	$ver  = file_exists( $path ) ? filemtime( $path ) : null;
 	wp_enqueue_style( 'joco-theme-style', get_stylesheet_uri(), array(), $ver );
 } );
+
+add_filter( 'woocommerce_email_background_color', function () {
+	return '#0b0d10';
+} );
+
+add_filter( 'woocommerce_email_body_background_color', function () {
+	return '#0f1217';
+} );
+
+add_filter( 'woocommerce_email_base_color', function () {
+	return '#ff4d24';
+} );
+
+add_filter( 'woocommerce_email_text_color', function () {
+	return '#e9edf3';
+} );
+
+add_filter( 'woocommerce_email_styles', function ( $css ) {
+	$css .= "\n";
+	$css .= 'body, #body, #wrapper { background: #0b0d10 !important; }' . "\n";
+	$css .= '#template_container { background: #0f1217 !important; border: 1px solid rgba(255,255,255,0.10) !important; border-radius: 18px !important; overflow: hidden !important; }' . "\n";
+	$css .= '#template_header { background: #0f1217 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }' . "\n";
+	$css .= '#template_header h1 { color: #ffffff !important; font-weight: 900 !important; letter-spacing: 0.01em !important; }' . "\n";
+	$css .= '#body_content, #body_content_inner { color: #e9edf3 !important; }' . "\n";
+	$css .= 'a { color: #ff4d24 !important; text-decoration: none !important; } a:hover { text-decoration: underline !important; }' . "\n";
+	$css .= 'h2, h3 { color: #ffffff !important; font-weight: 900 !important; }' . "\n";
+	$css .= '.button, a.button, a.button.alt, .button.alt { background: #ff4d24 !important; color: #000000 !important; border-radius: 999px !important; border: 0 !important; font-weight: 900 !important; letter-spacing: 0.01em !important; box-shadow: none !important; }' . "\n";
+	$css .= 'table, td, th { border-color: rgba(255,255,255,0.10) !important; }' . "\n";
+	$css .= 'table.order_details, table.order_details td, table.order_details th { background: transparent !important; }' . "\n";
+	$css .= '#addresses td { color: #e9edf3 !important; }' . "\n";
+	$css .= '#template_footer { color: rgba(255,255,255,0.65) !important; }' . "\n";
+	return $css;
+}, 20 );
