@@ -40,3 +40,9 @@ add_action( 'init', function () {
 	$register_from_file( 'joco/about', 'About Page', 'patterns/about.php', array( 'featured', 'pages' ), array( 'about', 'story' ) );
 	$register_from_file( 'joco/contact', 'Contact Page', 'patterns/contact.php', array( 'featured', 'pages' ), array( 'contact', 'form', 'support' ) );
 } );
+
+add_action( 'wp_enqueue_scripts', function () {
+	$path = get_theme_file_path( 'style.css' );
+	$ver  = file_exists( $path ) ? filemtime( $path ) : null;
+	wp_enqueue_style( 'joco-theme-style', get_stylesheet_uri(), array(), $ver );
+} );
