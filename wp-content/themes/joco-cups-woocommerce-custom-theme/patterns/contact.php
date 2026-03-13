@@ -34,37 +34,12 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"joco-contact-form","style":{"spacing":{"padding":{"top":"16px"}}}} -->
-<div class="wp-block-group joco-contact-form" style="padding-top:16px"><!-- wp:html -->
-<form>
-  <div class="joco-form-row">
-    <div class="joco-form-field">
-      <label for="joco-full-name">Full name</label>
-      <input id="joco-full-name" name="full_name" type="text" />
-    </div>
-    <div class="joco-form-field">
-      <label for="joco-email">Email</label>
-      <input id="joco-email" name="email" type="email" />
-    </div>
-  </div>
-
-  <div class="joco-form-field">
-    <label for="joco-subject">Subject</label>
-    <input id="joco-subject" name="subject" type="text" />
-  </div>
-
-  <div class="joco-form-field">
-    <label for="joco-message">Message</label>
-    <textarea id="joco-message" name="message" rows="7"></textarea>
-  </div>
-</form>
-<!-- /wp:html --></div>
+<div class="wp-block-group joco-contact-form" style="padding-top:16px"><!-- wp:shortcode -->
+[contact-form-7 id="462f64f" title="Contact"]
+<!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"18px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:18px"><!-- wp:button {"text":"Submit"} /-->
-
-<!-- wp:button {"text":"Reset","className":"is-style-outline"} /--></div>
-<!-- /wp:buttons --></div>
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
